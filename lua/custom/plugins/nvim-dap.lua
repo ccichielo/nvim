@@ -1,0 +1,44 @@
+return {
+  'mfussenegger/nvim-dap',
+  -- config = function()
+  --   local dap = require 'dap'
+  --   local cwd = function()
+  --     local source = debug.getinfo(2, 'S').source
+  --     local file = string.match(source, '^@(.*)')
+  --     return vim.fn.fnamemodify(file, ':p:h:h')
+  --   end
+
+  -- dap.configurations.python = {
+  --   {
+  --     type = 'python',
+  --     request = 'launch',
+  --     name = 'Hardcode',
+  --     program = '${file}',
+  --     pythonPath = function()
+  --       -- return '/usr/bin/python'
+  --       return '~/.local/share/nvim/mason/packages/debugpy/venv/bin/python'
+  --       -- return '~/dev/python-test-project/'
+  --     end,
+  --   },
+  -- }
+  --   local dap = require 'dap'
+  --
+  -- dap.adapters.python = {
+  --   type = 'executable',
+  --   command = 'python',
+  --   args = { '-m', 'debugpy.adapter' },
+  -- }
+  --
+  --   dap.configurations.python = {
+  --     {
+  --       type = 'python',
+  --       request = 'launch',
+  --       name = 'Launch file',
+  --       program = '${file}',
+  --       pythonPath = function()
+  --         return '~/.local/share/nvim/mason/packages/debugpy/venv/bin/python'
+  --       end,
+  --     },
+  --   }
+  -- end,
+}
