@@ -13,6 +13,13 @@ return {
       window = {
         position = 'right',
       },
+      filesystem = {
+        filtered_items = {
+          hide_dotfiles = false,
+          hide_gitignored = false,
+          hide_hidden = false,
+        },
+      },
     }
 
     vim.keymap.set('n', '<leader>e', ':Neotree toggle<CR>', { silent = true })
