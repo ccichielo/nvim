@@ -9,7 +9,11 @@ return {
     'MunifTanjim/nui.nvim',
   },
   config = function()
-    require('neo-tree').setup {}
+    require('neo-tree').setup {
+      window = {
+        position = 'right',
+      },
+    }
 
     vim.keymap.set('n', '<leader>e', ':Neotree toggle<CR>', { silent = true })
   end,

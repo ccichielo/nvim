@@ -10,4 +10,9 @@ vim.opt.foldcolumn = '0'
 vim.opt.foldlevel = 99
 vim.opt.foldlevelstart = 99
 
-return {}
+return {
+  -- Buffer Navigation
+  vim.api.nvim_set_keymap('n', '<S-Tab>', ':bprevious<CR>', { silent = true, noremap = true }),
+  vim.api.nvim_set_keymap('n', '<Tab>', ':bnext<CR>', { silent = true, noremap = true }),
+  vim.api.nvim_set_keymap('n', '<leader>x', ':bd<CR>', { silent = true, noremap = true }),
+}
