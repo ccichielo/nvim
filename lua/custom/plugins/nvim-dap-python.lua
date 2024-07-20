@@ -7,6 +7,11 @@ return {
   },
   config = function()
     local path = '~/.local/share/nvim/mason/packages/debugpy/venv/bin/python'
-    require('dap-python').setup(path)
+    local dap_python = require 'dap-python'
+    dap_python.setup(path)
+    dap_python.test_runner = 'pytest'
+    vim.keymap.set('n', '<leader>dt', function()
+      dap_python.test_method()
+    end, { desc = 'DAP-Python: Test Method' })
   end,
 }
