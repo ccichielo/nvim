@@ -110,6 +110,7 @@ return { -- LSP Configuration & Plugins
       -- But for many setups, the LSP (`tsserver`) will work just fine
       tsserver = {},
       --
+      tailwindcss = {},
       svelte = {},
       lua_ls = {
         -- cmd = {...},
@@ -141,7 +142,6 @@ return { -- LSP Configuration & Plugins
     vim.list_extend(ensure_installed, {
       'stylua', -- Used to format lua code
       'debugpy',
-      'eslint_d',
     })
     require('mason-tool-installer').setup { ensure_installed = ensure_installed }
 

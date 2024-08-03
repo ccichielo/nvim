@@ -16,11 +16,12 @@ return { -- Autoformat
       lua = { 'stylua' },
       go = { 'gofmt' },
       -- Conform can also run multiple formatters sequentially
-      -- python = { "isort", "black" },
+      python = { 'isort', 'black' },
       --
       -- You can use a sub-list to tell conform to run *until* a formatter
       -- is found.
-      -- javascript = { { "prettierd", "prettier" } },
+      typescript = { 'prettier', 'eslint' },
+      javascript = { 'prettier', 'eslint' },
     },
   },
   vim.api.nvim_set_keymap('n', '<leader>fm', ':lua require("conform").format()<CR>', { noremap = true, silent = true }),
