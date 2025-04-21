@@ -48,6 +48,9 @@ vim.opt.smartindent = true
 vim.opt.autoindent = true
 vim.opt.smarttab = true
 
+-- diagnostic
+vim.diagnostic.config { virtual_text = true }
+
 -- Diagnostic keymaps
 vim.keymap.set('n', '[d', vim.diagnostic.goto_prev, { desc = 'Go to previous [D]iagnostic message' })
 vim.keymap.set('n', ']d', vim.diagnostic.goto_next, { desc = 'Go to next [D]iagnostic message' })

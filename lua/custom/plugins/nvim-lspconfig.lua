@@ -68,6 +68,8 @@ return { -- LSP Configuration & Plugins
         --  For example, in C this would take you to the header
         map('gD', vim.lsp.buf.declaration, '[G]oto [D]eclaration')
 
+        map('E', vim.diagnostic.open_float, 'Show warning/error')
+
         -- The following two autocommands are used to highlight references of the
         -- word under your cursor when your cursor rests there for a little while.
         --    See `:help CursorHold` for information about when this is executed
@@ -108,8 +110,9 @@ return { -- LSP Configuration & Plugins
       --    https://github.com/pmizio/typescript-tools.nvim
       --
       -- But for many setups, the LSP (`tsserver`) will work just fine
-      tsserver = {},
+      -- tsserver = {},
       --
+      clangd = {},
       tailwindcss = {},
       svelte = {},
       lua_ls = {

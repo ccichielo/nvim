@@ -21,9 +21,31 @@ return {
     vim.keymap.set('n', '<F2>', dap.step_over, { desc = 'Debug: Step Over' })
     vim.keymap.set('n', '<F3>', dap.step_out, { desc = 'Debug: Step Out' })
     vim.keymap.set('n', '<leader>b', dap.toggle_breakpoint, { desc = 'Debug: Toggle Breakpoint' })
+    vim.keymap.set('n', '<leader>dr', dap.continue, { desc = 'Debug: Run' })
+
     vim.keymap.set('n', '<leader>B', function()
       dap.set_breakpoint(vim.fn.input 'Breakpoint condition: ')
     end, { desc = 'Debug: Set Breakpoint' })
     vim.keymap.set('n', '<F7>', dapui.toggle, { desc = 'Debug: See last session result.' })
+
+    dap.adapters.codelldb = {
+      type = 'executable',
+      command = 'codelldb', -- or if not in $PATH: "/absolute/path/to/codelldb"
+    }
+
+    dap.configurations.cpp = {
+      {
+        name = 'Launch file',
+        type = 'codelldb',
+        request = 'launch',
+        program = function()
+          return vim.fn.input('Path to executable: ', vim.fn.getcwd() .. '/', 'file')
+        end,
+        cwd = '${workspaceFolder}',
+        stopOnEntry = false,
+        args = {}, -- You can pass command-line args here
+        runInTerminal = false,
+      },
+    }
   end,
 }
